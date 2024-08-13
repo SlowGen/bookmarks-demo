@@ -2,8 +2,10 @@
   "name": "bookmarks",
   "version": "1.0.0",
   "description": "Flutter demo",
+  "type": "module",
   "dependencies": {
     "@types/chrome": "^0.0.269",
+    "js-yaml": "^4.1.0",
     "typescript": "^5.5.4"
   }
 }
