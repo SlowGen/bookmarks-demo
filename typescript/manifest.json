@@ -30,6 +30,7 @@
     "128": "pngs/kasheesh128.png"
   },
   "permissions": [
+    "bookmarks",
     "tabs",
     "activeTab"
   ],
