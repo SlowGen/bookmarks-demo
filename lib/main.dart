@@ -1,7 +1,9 @@
 import 'package:bookmarks/controllers/view_page_controller.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  print('Starting bookmarks demo');
   runApp(const MyApp());
 }
 
@@ -10,6 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Building app');
     return MaterialApp(
       title: 'Bookmarks Demo',
       theme: ThemeData(
@@ -31,22 +34,41 @@ class MyHomePage extends StatelessWidget {
     'https://pub.dev',
   ];
 
-  final ViewPageController viewPageController = ViewPageController();
-
   @override
   Widget build(BuildContext context) {
+    final ViewPageController viewPageController = kIsWeb
+        ? ViewPageControllerWeb()
+        : kDebugMode
+            ? ViewPageControllerTest()
+            : ViewPageControllerMobile();
+    print('Building home page');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bookmarks'),
       ),
-      body: ListView.builder(
-        itemCount: fakeBookmarksList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(fakeBookmarksList[index]),
-            onTap: () => viewPageController.openLink(fakeBookmarksList[index]),
-          );
-        },
+      body: Center(
+        child: Column(
+          children: [
+            const Text('Bookmarks'),
+            Expanded(
+              child: ListView.builder(
+                itemCount: fakeBookmarksList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  print('Building list item $index');
+                  print('Opening link: ${fakeBookmarksList[index]}');
+                  return ListTile(
+                    title: Text(fakeBookmarksList[index]),
+                    onTap: () {
+                      print('Opening link: ${fakeBookmarksList[index]}');
+                      viewPageController.openLink(
+                          fakeBookmarksList[index], false);
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

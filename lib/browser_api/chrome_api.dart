@@ -19,7 +19,7 @@ extension type Tab(JSObject _) implements JSObject {
 
 abstract class BrowserFunctions {
   static dynamic openLink(String url, [bool active = true]) async {
-    final createProperties = {'url': url, 'active': active};
-    return chrome.tabs.create(createProperties.toJSBox);
+    final createProperties = {'url': url, 'active': active}.jsify() as JSObject;
+    return chrome.tabs.create(createProperties);
   }
 }

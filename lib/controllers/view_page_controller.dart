@@ -1,18 +1,12 @@
-import 'package:flutter/foundation.dart';
 import 'package:bookmarks/browser_api/chrome_fakes.dart'
     if (dart.library.js_interop) 'package:bookmarks/browser_api/chrome_api.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ViewPageController {
   ViewPageController();
-  final platformController = kIsWeb
-      ? ViewPageControllerWeb()
-      : kDebugMode
-          ? ViewPageControllerTest()
-          : ViewPageControllerMobile();
 
   Future<void> openLink(String url, [bool? active]) async {
-    return platformController.openLink(url);
+    throw UnimplementedError();
   }
 }
 
@@ -33,7 +27,7 @@ class ViewPageControllerWeb extends ViewPageController {
 
   @override
   Future<void> openLink(String url, [bool? active]) async {
-    await BrowserFunctions.openLink(url);
+    await BrowserFunctions.openLink(url, active ?? true);
   }
 }
 
@@ -41,7 +35,7 @@ class ViewPageControllerTest extends ViewPageController {
   ViewPageControllerTest();
 
   @override
-  Future<void> openLink(String url, [bool? active]) async {
+  Future<void> openLink(String url, [bool? active, bool? pinned]) async {
     print('Opening link: $url');
     return;
   }
