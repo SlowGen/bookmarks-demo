@@ -1,4 +1,3 @@
-import 'package:bookmarks/browser_api/chrome_types.dart';
 import 'package:flutter/foundation.dart';
 import 'package:bookmarks/browser_api/chrome_fakes.dart'
     if (dart.library.js_interop) 'package:bookmarks/browser_api/chrome_api.dart';
@@ -34,8 +33,7 @@ class ViewPageControllerWeb extends ViewPageController {
 
   @override
   Future<void> openLink(String url, [bool? active]) async {
-    final TabCreateRequest createProperties = TabCreateRequest(url, active);
-    await chrome.tabs.create(createProperties);
+    await BrowserFunctions.openLink(url);
   }
 }
 
@@ -44,6 +42,7 @@ class ViewPageControllerTest extends ViewPageController {
 
   @override
   Future<void> openLink(String url, [bool? active]) async {
+    print('Opening link: $url');
     return;
   }
 }
