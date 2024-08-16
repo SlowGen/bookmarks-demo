@@ -46,29 +46,16 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bookmarks'),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const Text('Bookmarks'),
-            Expanded(
-              child: ListView.builder(
-                itemCount: fakeBookmarksList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  print('Building list item $index');
-                  print('Opening link: ${fakeBookmarksList[index]}');
-                  return ListTile(
-                    title: Text(fakeBookmarksList[index]),
-                    onTap: () {
-                      print('Opening link: ${fakeBookmarksList[index]}');
-                      viewPageController.openLink(
-                          fakeBookmarksList[index], false);
-                    },
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: fakeBookmarksList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(fakeBookmarksList[index]),
+            onTap: () {
+              viewPageController.openLink(fakeBookmarksList[index], false);
+            },
+          );
+        },
       ),
     );
   }
