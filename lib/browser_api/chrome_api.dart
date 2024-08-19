@@ -12,9 +12,9 @@ extension type Tabs(JSObject _) implements JSObject {
 }
 
 extension type Tab(JSObject _) implements JSObject {
-  external int get id;
-  external String get url;
-  external bool get active;
+  external JSNumber get id;
+  external JSString get url;
+  external JSBoolean get active;
 }
 
 abstract class TabsMethods {

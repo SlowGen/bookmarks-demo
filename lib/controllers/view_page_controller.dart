@@ -27,16 +27,21 @@ class ViewPageControllerWeb implements ViewPageController {
 
   @override
   Future<void> openLink(String url, [bool? active]) async {
-    await TabsMethods.create(url, active ?? true);
+    final Tab tab = await TabsMethods.create(url, active ?? true);
+    print('Opened tab: $tab');
   }
 }
 
 class ViewPageControllerTest implements ViewPageController {
   ViewPageControllerTest();
+  String testCase = 'https://example.com';
+
+  void setTestCase(String testUrl) {
+    testCase = testUrl;
+  }
 
   @override
   Future<void> openLink(String url, [bool? active, bool? pinned]) async {
-    print('Opening link: $url');
-    return;
+    print('Opening link: $testCase');
   }
 }

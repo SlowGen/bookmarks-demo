@@ -22,7 +22,7 @@ class Tab {
 }
 
 class TabsMethods {
-  static Future<void> create(String url, [bool active = true]) async {
+  static Future<Tab> create(String url, [bool active = true]) async {
     throw UnimplementedError();
   }
 }
