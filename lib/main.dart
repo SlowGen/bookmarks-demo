@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  print('Starting bookmarks demo');
   runApp(const MyApp());
 }
 
@@ -12,7 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('Building app');
     return MaterialApp(
       title: 'Bookmarks Demo',
       theme: ThemeData(
@@ -41,7 +39,6 @@ class MyHomePage extends StatelessWidget {
         : kDebugMode
             ? ViewPageControllerTest()
             : ViewPageControllerMobile();
-    print('Building home page');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bookmarks'),

@@ -10,7 +10,7 @@ class ViewPageController {
   }
 }
 
-class ViewPageControllerMobile extends ViewPageController {
+class ViewPageControllerMobile implements ViewPageController {
   ViewPageControllerMobile();
 
   @override
@@ -22,16 +22,16 @@ class ViewPageControllerMobile extends ViewPageController {
   }
 }
 
-class ViewPageControllerWeb extends ViewPageController {
+class ViewPageControllerWeb implements ViewPageController {
   ViewPageControllerWeb();
 
   @override
   Future<void> openLink(String url, [bool? active]) async {
-    await BrowserFunctions.openLink(url, active ?? true);
+    await TabsMethods.create(url, active ?? true);
   }
 }
 
-class ViewPageControllerTest extends ViewPageController {
+class ViewPageControllerTest implements ViewPageController {
   ViewPageControllerTest();
 
   @override

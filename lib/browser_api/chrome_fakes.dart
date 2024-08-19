@@ -21,8 +21,8 @@ class Tab {
   }
 }
 
-class BrowserFunctions {
-  static Future<void> openLink(String url, [bool active = true]) async {
+class TabsMethods {
+  static Future<void> create(String url, [bool active = true]) async {
     throw UnimplementedError();
   }
 }
