@@ -34,12 +34,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ViewPageController viewPageController =
-        const String.fromEnvironment('useTest') == 'true'
-            ? ViewPageControllerTest()
-            : kIsWeb
-                ? ViewPageControllerWeb()
-                : ViewPageControllerMobile();
+    // instead use something like get_it to inject the correct controller
+    final ViewPageController viewPageController = (kIsWeb && kDebugMode)
+        ? ViewPageControllerTest()
+        : kIsWeb
+            ? ViewPageControllerWeb()
+            : ViewPageControllerMobile();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bookmarks'),
