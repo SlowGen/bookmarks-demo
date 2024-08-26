@@ -54,3 +54,4 @@ app.*.map.json
 node_modules
 web/*.js
 web/*.json
+!web/flutter_bootstrap.js
