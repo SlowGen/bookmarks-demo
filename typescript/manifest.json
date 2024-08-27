@@ -16,18 +16,14 @@
   "action": {
     "default_popup": "index.html",
     "default_icon": {
-      "16": "assets/pngs/kasheesh16.png",
-      "32": "assets/pngs/kasheesh32.png",
-      "48": "assets/pngs/kasheesh48.png",
-      "128": "assets/pngs/kasheesh128.png"
+      "48": "assets/pngs/bookmarks48.png",
+      "128": "assets/pngs/bookmarks128.png"
     },
     "default_title": "Open Bookmarks!"
   },
   "icons": {
-    "16": "assets/pngs/kasheesh16.png",
-    "32": "assets/pngs/kasheesh32.png",
-    "48": "assets/pngs/kasheesh48.png",
-    "128": "assets/pngs/kasheesh128.png"
+    "48": "assets/pngs/bookmarks48.png",
+    "128": "assets/pngs/bookmarks128.png"
   },
   "permissions": [
     "bookmarks",
