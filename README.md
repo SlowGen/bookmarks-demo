@@ -4,7 +4,9 @@ This is a DEMO project for building a browser extension alongside a Flutter mobi
 
 This example code was built as part of a presentation for FlutterConUSA2024.
 
-You can view the slide deck here: [Browser Extensions with Flutter](https://www.canva.com/design/DAGNRjkbebQ/3pXYwCfmZYEwJgYBInQxDA/edit?utm_content=DAGNRjkbebQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+You can view the slide deck here: [Browser Extensions with Flutter]('') ADD PDF LINK
+
+Video of the presentation will be available soon.
 
 ## Getting Started
 
