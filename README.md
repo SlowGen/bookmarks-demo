@@ -20,5 +20,8 @@ To build the extension, run `scripts/build.sh` to compile the typescript code, r
 
 You can build and run the mobile app as you would normally.
 
- For more on extensions: [Chrome Extensions](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
  For more on Flutter/Dart JS interop: [Flutter JS Interop](https://dart.dev/interop/js-interop/usage)
+
+ For more on extensions: [Chrome Extensions](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
+
+ How to convert to Safari: [Safari Extensions](https://developer.apple.com/documentation/safariservices/converting-a-web-extension-for-safari)
