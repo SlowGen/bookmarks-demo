@@ -27,6 +27,7 @@ class ViewPageControllerWeb implements ViewPageController {
 
   @override
   Future<void> openLink(String url, [bool? active]) async {
+    // while we aren't using the Tab return for anything functional here, it is a good demonstration of how to use the async API and get a return value.
     final Tab tab = await TabsMethods.create(url, active ?? true);
     print('Opened tab: $tab');
   }
