@@ -1,5 +1,4 @@
-import 'package:bookmarks/browser_api/chrome_fakes.dart'
-    if (dart.library.js_interop) 'package:bookmarks/browser_api/chrome_api.dart';
+import 'package:bookmarks/browser_extension/index.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ViewPageController {
