@@ -1,6 +1,6 @@
 import 'dart:js_interop';
 
-import 'package:bookmarks/browser_extension/interops/chrome_api.dart';
+import 'package:bookmarks/browser_extension/browser_interops/chrome_api.dart';
 
 abstract class TabsMethods {
   static dynamic create(String url, [bool active = true]) async {
