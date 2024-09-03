@@ -9,6 +9,17 @@ class ViewPageController {
   }
 }
 
+class ViewPageControllerWeb implements ViewPageController {
+  ViewPageControllerWeb();
+
+  @override
+  Future<void> openLink(String url, [bool? active]) async {
+    // while we aren't using the Tab return for anything functional here, it is a good demonstration of how to use the async API and get a return value.
+    final Tab tab = await TabsMethods.create(url, active ?? true);
+    print('Opened tab: $tab');
+  }
+}
+
 class ViewPageControllerMobile implements ViewPageController {
   ViewPageControllerMobile();
 
@@ -18,17 +29,6 @@ class ViewPageControllerMobile implements ViewPageController {
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
       throw 'Could not launch $url';
     }
-  }
-}
-
-class ViewPageControllerWeb implements ViewPageController {
-  ViewPageControllerWeb();
-
-  @override
-  Future<void> openLink(String url, [bool? active]) async {
-    // while we aren't using the Tab return for anything functional here, it is a good demonstration of how to use the async API and get a return value.
-    final Tab tab = await TabsMethods.create(url, active ?? true);
-    print('Opened tab: $tab');
   }
 }
 
