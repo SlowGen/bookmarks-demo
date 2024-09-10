@@ -1,10 +1,13 @@
+// Using the index for our imports to ensure all pieces are properly conditionally imported.
 import 'package:bookmarks/browser_extension/index.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// First the unimplmented base class of which all our implementations will inherit from.
 class ViewPageController {
   ViewPageController();
 
   Future<void> openLink(String url, [bool? active]) async {
+    // Throwing unimplemented errors aren't strictly necessary, but it can be useful to ensure that you don't forget to utilize the correctly implemented classes and methods.
     throw UnimplementedError();
   }
 }

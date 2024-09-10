@@ -28,7 +28,8 @@
   "permissions": [
     "bookmarks",
     "tabs",
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "host_permissions": [],
   "web_accessible_resources": [

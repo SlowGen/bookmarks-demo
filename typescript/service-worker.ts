@@ -1,3 +1,5 @@
+// For more on extension service workers, see https://developer.chrome.com/docs/extensions/develop/concepts/service-workers
+
 chrome.bookmarks.onCreated.addListener(
   (id: string, bookmark: chrome.bookmarks.BookmarkTreeNode) => {
     // network call to add bookmark to database
