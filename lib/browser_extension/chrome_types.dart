@@ -1,4 +1,4 @@
-// Tab a return type from many of the chrome.tabs methods
+// Tab is a return type from many of the chrome.tabs methods
 class Tab {
   final int id;
   final String url;
