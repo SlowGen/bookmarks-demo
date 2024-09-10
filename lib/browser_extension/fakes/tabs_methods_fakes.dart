@@ -1,4 +1,4 @@
-import 'package:bookmarks/browser_extension/fakes/chrome_types_dart.dart';
+import 'package:bookmarks/browser_extension/chrome_types.dart';
 
 class TabsMethods {
   static Future<Tab> create(String url, [bool active = true]) async {

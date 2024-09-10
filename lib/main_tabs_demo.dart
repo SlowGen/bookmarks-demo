@@ -1,4 +1,3 @@
-import 'package:bookmarks/controllers/last_visited_controller.dart';
 import 'package:bookmarks/controllers/view_page_controller.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bookmarks Demo',
+      title: 'Bookmarks App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -48,51 +47,21 @@ class MyHomePage extends StatelessWidget {
         : kIsWeb
             ? ViewPageControllerWeb()
             : ViewPageControllerMobile();
-    final LastVisitedController lastVisitedController = (kIsWeb && kDebugMode)
-        ? LastVisitedControllerWeb()
-        : kIsWeb
-            ? LastVisitedControllerWeb()
-            : LastVisitedControllerMobile();
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bookmarks'),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ElevatedButton(
-            onPressed: () async {
-              final String lastVisited =
-                  await lastVisitedController.getLastVisited();
-              print('Last Visited: $lastVisited');
+      body: ListView.builder(
+        itemCount: fakeBookmarksList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(fakeBookmarksList[index]),
+            onTap: () {
+              viewPageController.openLink(fakeBookmarksList[index], false);
             },
-            child: const Text('Get Last Visited'),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              await lastVisitedController.setLastVisited('https://flutter.dev');
-            },
-            child: const Text('Set Last Visited'),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              await lastVisitedController.removeLastVisited();
-            },
-            child: const Text('Clear Last Visited'),
-          ),
-          // ListView.builder(
-          //   itemCount: fakeBookmarksList.length,
-          //   itemBuilder: (BuildContext context, int index) {
-          //     return ListTile(
-          //       title: Text(fakeBookmarksList[index]),
-          //       onTap: () {
-          //         viewPageController.openLink(fakeBookmarksList[index], false);
-          //       },
-          //     );
-          //   },
-          // ),
-        ],
+          );
+        },
       ),
     );
   }

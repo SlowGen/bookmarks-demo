@@ -1,4 +1,5 @@
 // Using the index for our imports to ensure all pieces are properly conditionally imported.
+import 'package:bookmarks/browser_extension/chrome_types.dart';
 import 'package:bookmarks/browser_extension/index.dart';
 import 'package:url_launcher/url_launcher.dart';
 

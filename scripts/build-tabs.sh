@@ -7,4 +7,4 @@ tsc typescript/*.ts --outDir web --strict --target ES2021
 node ./scripts/pubspec-manifest.js
 
 # build extension. Note the --csp flag and the --no-web-resources-cdn flag, these are required to ensure that the app uses only local resources as required by extension rules
-flutter build web --csp --no-web-resources-cdn --profile
+flutter build web --csp --no-web-resources-cdn --profile --target lib/main_tabs_demo.dart
