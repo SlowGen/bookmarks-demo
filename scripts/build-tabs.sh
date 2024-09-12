@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This example script is used to build an implementation of the tabs demo
+# This example script is used to build the extension implementation of the tabs demo. To view mobile, run/build as you normally would
 
 # transpile typescript to javascript and copy to flutter web folder
 tsc typescript/*.ts --outDir web --strict --target ES2021
