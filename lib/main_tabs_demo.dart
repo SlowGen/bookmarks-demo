@@ -1,3 +1,5 @@
+// This main build demos usage of the Tabs API
+
 import 'package:bookmarks/controllers/view_page_controller.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bookmarks Demo',
+      title: 'Bookmarks App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -34,12 +36,20 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // instead use something like get_it to inject the correct controller
+    // Below we have hard-coded the controller to use the correct implementation based on various conditions / platforms.
+    // There are many ways to accomplish this such as using a service locator or dependency injection.
+    // For example, you could instead use something like get_it to inject the correct controller
+
+    // note the kIsWeb and kDebugMode check, this is useful for
+    // running your application in debug mode and bypassing the
+    // Chrome API which does not work in debug mode.
+    // While not very useful to test functionality, it can be useful to test the UI/styling.
     final ViewPageController viewPageController = (kIsWeb && kDebugMode)
         ? ViewPageControllerTest()
         : kIsWeb
             ? ViewPageControllerWeb()
             : ViewPageControllerMobile();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bookmarks'),

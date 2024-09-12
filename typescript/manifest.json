@@ -2,9 +2,9 @@
   "name": "bookmarks",
   "version": "1.0.0",
   "version_name": "1.0.0",
-  "description": "demo",
+  "description": "extension api demo",
   "manifest_version": 3,
-  "homepage_url": "http://example.com",
+  "homepage_url": "https://github.com/SlowGen/bookmarks-demo",
   "background": {
     "service_worker": "service-worker.js",
     "type": "module"
@@ -28,7 +28,8 @@
   "permissions": [
     "bookmarks",
     "tabs",
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "host_permissions": [],
   "web_accessible_resources": [
