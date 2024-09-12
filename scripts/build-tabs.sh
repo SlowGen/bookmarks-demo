@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This example script is used to build an implementation of the tabs demo
+
 # transpile typescript to javascript and copy to flutter web folder
 tsc typescript/*.ts --outDir web --strict --target ES2021
 

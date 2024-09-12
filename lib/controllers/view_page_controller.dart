@@ -1,9 +1,9 @@
-// Using the index for our imports to ensure all pieces are properly conditionally imported.
 import 'package:bookmarks/browser_extension/chrome_types.dart';
+// Using the index for our imports to ensure all pieces are properly conditionally imported.
 import 'package:bookmarks/browser_extension/index.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// First the unimplmented base class of which all our implementations will inherit from.
+// a note on the use of an unimplemented base class: This is optional. You could just as easily use your Mobile implementation as your base / default class. I choose to do it this way because I find it much easier to ensure that I am using the correct implementations. In some cases, an app may have several different platform types and implementations to deal with (say a regular web and an extension, or Watch vs Phone vs Tablet). This way makes it a little less prone to developer error.
 class ViewPageController {
   ViewPageController();
 
@@ -24,6 +24,7 @@ class ViewPageControllerWeb implements ViewPageController {
   }
 }
 
+// here we are using launchUrl, but you could use any method you prefer to open a link on mobile.
 class ViewPageControllerMobile implements ViewPageController {
   ViewPageControllerMobile();
 

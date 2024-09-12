@@ -23,6 +23,8 @@ extension type Tabs(JSObject _) implements JSObject {
 // As a further example: here is what the Storage API might look like.
 extension type Storage(JSObject _) implements JSObject {
   external Local get local;
+  // external Sync get sync;  -- for example
+  // external Session get session; -- for example
 }
 
 extension type Local(JSObject _) implements JSObject {

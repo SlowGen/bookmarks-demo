@@ -10,4 +10,12 @@ The manifest is a required component for an extension and it will not work witho
   },
 ```
 
-Everything else will be based on the needs of your project.
+Everything else will be based on the needs of your project. For this demo, we need to also include the "storage" permission to access that part of the API.
+
+```
+  "permissions": [
+    "storage"
+  ],
+```
+
+Be sure to check the documentation as many subsections of the Chrome API require specific permissions to be set here.

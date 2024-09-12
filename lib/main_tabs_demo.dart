@@ -1,3 +1,5 @@
+// This main build demos usage of the Tabs API
+
 import 'package:bookmarks/controllers/view_page_controller.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

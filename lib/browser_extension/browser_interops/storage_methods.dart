@@ -10,7 +10,7 @@ abstract class StorageMethods {
     await chrome.storage.local.set(itemsJS).toDart;
   }
 
-  // The 'get' method is a bit tricky because the browser storage object has no set type, it is just an object. Because of this we need to do a little bit of extra work. We use a dynamic return type because this can vary depending on what is stored in the storage object.
+  // The 'get' method is a bit tricky because the browser storage object has no set type, it is just an object. Because of this we need to do a little bit of extra work. We use a dynamic return type because this can vary depending on what is stored in the storage object and we won't always know the exact Dart type we'll need to return.
   static dynamic get(String key) async {
     // first convert the key to a JSString.
     final jsKey = key.toJS;
@@ -34,6 +34,7 @@ abstract class StorageMethods {
   }
 
   static Future<void> remove(String key) async {
+    // don't forget to convert the key to a JSString and then call .toDart to convert the JS Promise to a Dart Future.
     await chrome.storage.local.remove(key.toJS).toDart;
   }
 

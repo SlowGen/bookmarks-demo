@@ -1,8 +1,8 @@
 // This is not required, however heavily recommended. This script will update the manifest.json file in the web directory with the information from the pubspec.yaml file keeping the information in sync.
 
-// There are many ways to accomplish the same goal, including using Dart instead of Javascript. This is just one way to do it.
+// There are many ways to accomplish the same goal, including using Dart or a shell script instead of Javascript. This is just one way to do it.
 
-// This could also function to add a custom key and icons for using Flavors.
+// This can also function to add a custom key and icons for using Flavors.
 
 
 import { readFileSync, writeFileSync } from 'fs';
