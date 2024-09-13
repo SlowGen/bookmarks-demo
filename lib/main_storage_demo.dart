@@ -63,6 +63,7 @@ class MyHomePage extends StatelessWidget {
               onPressed: () async {
                 await lastVisitedController
                     .setLastVisited('https://flutter.dev');
+                print('set last visited as flutter.dev');
               },
               child: const Text('Set Last Visited'),
             ),
