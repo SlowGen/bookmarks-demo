@@ -16,7 +16,8 @@ You must have Flutter, node and npm installed on your machine to run this projec
 2. Run `npm install` in the root directory
 3. Run `flutter pub get`
 
-To build the extension, run `scripts/build.sh` to compile the typescript code, run the versioning script and build into the `build/web` directory. You can then load unpacked the extension from there.
+There are two demos in this project: One demonstrating usage of the Chrome Tabs API and the other demonstrating usage of the Chrome Storage API.
+To build the Tabs extension, run `scripts/build-tabs.sh` to compile the typescript code, run the versioning script and build into the `build/web` directory. You can then load unpacked the extension from there. For Storage, run `scripts/build-storage.sh`.
 
 You can build and run the mobile app as you would normally.
 
